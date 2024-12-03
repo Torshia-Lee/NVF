@@ -1,0 +1,11 @@
+<% content_for :title, "New fishing log" %>
+
+<h1>New fishing log</h1>
+
+<%= render "form", fishing_log: @fishing_log %>
+
+<br>
+
+<div>
+  <%= link_to "Back to fishing logs", fishing_logs_path %>
+</div>
