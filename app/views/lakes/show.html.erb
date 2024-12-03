@@ -8,3 +8,8 @@
 
   <%= button_to "Destroy this lake", @lake, method: :delete %>
 </div>
+
+<div>
+  <h2>Comments</h2>
+  <%= render @lake.comments %>
+</div>

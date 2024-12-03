@@ -8,6 +8,7 @@ class LakesController < ApplicationController
 
   # GET /lakes/1 or /lakes/1.json
   def show
+    @lake = Lake.find(params[:id])
   end
 
   # GET /lakes/new
