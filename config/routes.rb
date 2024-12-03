@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   resources :favorites
   resources :fishing_logs
-  resources :comments
   devise_for :users
 
   root "lakes#index"
-  resources :lakes
+
+  resources :lakes do
+    resources :comments
+  end 
+
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
