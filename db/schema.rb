@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_03_162830) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_03_163451) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_03_162830) do
     t.datetime "updated_at", null: false
     t.index ["lake_id"], name: "index_comments_on_lake_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "lake_id", null: false
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lake_id"], name: "index_favorites_on_lake_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "fishing_logs", force: :cascade do |t|
@@ -65,6 +75,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_03_162830) do
 
   add_foreign_key "comments", "lakes"
   add_foreign_key "comments", "users"
+  add_foreign_key "favorites", "lakes"
+  add_foreign_key "favorites", "users"
   add_foreign_key "fishing_logs", "lakes"
   add_foreign_key "fishing_logs", "users"
 end
