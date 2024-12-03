@@ -1,0 +1,52 @@
+<%= form_with(model: fishing_log) do |form| %>
+  <% if fishing_log.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(fishing_log.errors.count, "error") %> prohibited this fishing_log from being saved:</h2>
+
+      <ul>
+        <% fishing_log.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :lake_id, style: "display: block" %>
+    <%= form.text_field :lake_id %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :species, style: "display: block" %>
+    <%= form.text_field :species %>
+  </div>
+
+  <div>
+    <%= form.label :notes, style: "display: block" %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div>
+    <%= form.label :lures, style: "display: block" %>
+    <%= form.text_field :lures %>
+  </div>
+
+  <div>
+    <%= form.label :photo, style: "display: block" %>
+    <%= form.text_field :photo %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
