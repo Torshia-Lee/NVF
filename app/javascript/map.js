@@ -1,7 +1,7 @@
 console.log("javascript loaded!")
 
 
-// Initialize and add the map
+ /* // Initialize and add the map
 let map;
 
 async function initMap() {
@@ -27,4 +27,4 @@ async function initMap() {
   });
 }
 
-initMap();
+initMap(); */ 
