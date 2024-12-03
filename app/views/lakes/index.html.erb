@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Lakes" %>
+
+<h1>Lakes</h1>
+
+<div id="lakes">
+  <% @lakes.each do |lake| %>
+    <%= render lake %>
+    <p>
+      <%= link_to "Show this lake", lake %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New lake", new_lake_path %>

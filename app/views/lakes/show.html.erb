@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @lake %>
+
+<div>
+  <%= link_to "Edit this lake", edit_lake_path(@lake) %> |
+  <%= link_to "Back to lakes", lakes_path %>
+
+  <%= button_to "Destroy this lake", @lake, method: :delete %>
+</div>
