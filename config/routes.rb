@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorites
   resources :fishing_logs
   resources :comments
   devise_for :users
