@@ -21,12 +21,22 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <% if user_signed_in? %>
-    <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
-    <% else %>
-    <%= button_to "Sign In", user_session_path %>
-    <% end %>
+  
     
+    <div id="nav-bar"> 
+      <%= button_to "Home", root_path, method: :get%>
+      <%= button_to "Fishing Logs", fishing_logs_path, method: :get %>
+      <%= button_to "Favorite Spots", favorites_path, method: :get %>
+
+      <% if user_signed_in? %>
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% else %>
+      <%= button_to "Sign In", user_session_path %>
+    <% end %>
+
+    
+    </div> 
+
     <%= yield %>
     <%= yield :javascript %>
   </body>
