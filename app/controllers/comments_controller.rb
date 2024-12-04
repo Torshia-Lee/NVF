@@ -49,9 +49,10 @@ class CommentsController < ApplicationController
   # DELETE /comments/1 or /comments/1.json
   def destroy
     @comment.destroy!
+    @lake = Lake.find(params[:lake_id])
 
     respond_to do |format|
-      format.html { redirect_to comments_path, status: :see_other, notice: "Comment was successfully destroyed." }
+      format.html { redirect_to lake_path(@lake), status: :see_other, notice: "Comment was successfully destroyed." }
       format.json { head :no_content }
     end
   end

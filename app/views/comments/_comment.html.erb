@@ -9,4 +9,7 @@
     <%= comment.body %>
   </p>
 
+  <p>
+    <%= button_to "Destroy Comment", [comment.lake, comment], method: :delete, data: { confirm: "Are you sure?" } %>
+  </p>
 </div>
