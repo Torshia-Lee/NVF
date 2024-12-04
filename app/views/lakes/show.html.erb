@@ -12,4 +12,7 @@
 <div>
   <h2>Comments</h2>
   <%= render @lake.comments %>
+
+  <h4>Add a comment:</h4>
+  <%= render "comments/form", lake: @lake %>
 </div>
