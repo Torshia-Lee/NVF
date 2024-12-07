@@ -33,9 +33,9 @@ async function defaultMap() {
   const { Map } = await google.maps.importLibrary("maps");
   
 
-  // The map, centered at the location the user picked
+  // The map, centered on minnesota
   map = new Map(document.getElementById("map"), {
-    zoom: 5,
+    zoom: 6,
     center: position,
     mapId: "DEFAULT_MAP_ID",
   });

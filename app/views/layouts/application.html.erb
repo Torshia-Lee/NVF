@@ -18,26 +18,41 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+          <div class="position-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <p class="nav-link active"><%= link_to "Home", root_path, method: :get%></p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link active"><%= link_to "Fishing Logs", fishing_logs_path, method: :get %></p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link active"><%= link_to "Favorite Spots", favorites_path, method: :get %></p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link active"><%= link_to "My Account", edit_user_registration_path, method: :get %></p>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <% if user_signed_in? %>
+              <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger w-100" %>
+            <% else %>
+              <%= button_to "Sign In", new_user_session_path, class: "btn btn-primary w-100" %>
+            <% end %>
+          </div>
+        </nav>
 
-  
-    
-    <div id="nav-bar"> 
-      <%= button_to "Home", root_path, method: :get%>
-      <%= button_to "Fishing Logs", fishing_logs_path, method: :get %>
-      <%= button_to "Favorite Spots", favorites_path, method: :get %>
+        <!-- Main content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+          <%= yield %>
+          <%= yield :javascript %>
+        </main>
+      </div>
+    </div>
 
-      <% if user_signed_in? %>
-      <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
-      <% else %>
-      <%= button_to "Sign In", user_session_path %>
-    <% end %>
-
-    
-    </div> 
-
-    <%= yield %>
-    <%= yield :javascript %>
   </body>
 </html>
