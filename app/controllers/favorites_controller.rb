@@ -8,6 +8,7 @@ class FavoritesController < ApplicationController
 
   # GET /favorites/1 or /favorites/1.json
   def show
+    @favorite = Favorite.find(params[:id])
   end
 
   # GET /favorites/new
