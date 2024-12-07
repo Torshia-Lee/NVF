@@ -8,6 +8,7 @@ class FishingLogsController < ApplicationController
 
   # GET /fishing_logs/1 or /fishing_logs/1.json
   def show
+    @fishing_log = FishingLog.find(params[:id])
   end
 
   # GET /fishing_logs/new
