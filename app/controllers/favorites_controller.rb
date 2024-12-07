@@ -14,6 +14,7 @@ class FavoritesController < ApplicationController
   # GET /favorites/new
   def new
     @favorite = Favorite.new
+    @lakes = Lake.all
   end
 
   # GET /favorites/1/edit
@@ -22,7 +23,8 @@ class FavoritesController < ApplicationController
 
   # POST /favorites or /favorites.json
   def create
-    @favorite = Favorite.new(favorite_params)
+    @favorite = current_user.favorites.new(favorite_params)
+    @lakes = Lake.all
 
     respond_to do |format|
       if @favorite.save

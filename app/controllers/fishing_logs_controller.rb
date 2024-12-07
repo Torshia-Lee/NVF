@@ -24,6 +24,7 @@ class FishingLogsController < ApplicationController
   # POST /fishing_logs or /fishing_logs.json
   def create
     @fishing_log = current_user.fishing_logs.new(fishing_log_params)
+    @lakes = Lake.all
 
     respond_to do |format|
       if @fishing_log.save
