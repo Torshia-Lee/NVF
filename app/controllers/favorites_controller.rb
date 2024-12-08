@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
 
   # GET /favorites or /favorites.json
   def index
-    @favorites = Favorite.all
+    @favorites = current_user.favorites.paginate(page: params[:page], per_page: 1)
   end
 
   # GET /favorites/1 or /favorites/1.json
