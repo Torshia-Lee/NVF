@@ -3,7 +3,7 @@ class FishingLogsController < ApplicationController
 
   # GET /fishing_logs or /fishing_logs.json
   def index
-    @fishing_logs = FishingLog.all
+    @fishing_logs = current_user.fishing_logs.paginate(page: params[:page], per_page: 2)
   end
 
   # GET /fishing_logs/1 or /fishing_logs/1.json
