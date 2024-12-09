@@ -16,18 +16,24 @@
 
 <h1>Lakes</h1>
 
-<div id="lakes">
-  <% @lakes.each do |lake| %>
-    <%= render lake %>
-    <p>
-      <%= link_to "Show this lake", lake %>
-    </p>
-  <% end %>
+<div class="container-fluid">
+  <div class="row">
+    <% @lakes.each do |lake| %>
+      <div class="col-md-4 mb-4">
+        <div class="card mb-4 shadow">
+          <%= render lake %>
+          <p>
+            <%= link_to "Show this lake", lake %>
+          </p>
+        </div>
+      </div>
+      <% end %>
+  </div>
 </div>
 
 
 
-<%= link_to "New lake", new_lake_path %>
+<%= button_to "Create New Lake Page", new_lake_path, method: :get, class: "btn btn-secondary btn-lg" %>
 
 
 
