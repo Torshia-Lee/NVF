@@ -4,13 +4,19 @@
 
 <h1>Favorites</h1>
 
-<div id="favorites">
-  <% @favorites.each do |favorite| %>
-    <%= render favorite %>
-    <p>
-      <%= link_to "Show this favorite", favorite %>
-    </p>
-  <% end %>
+<div class="container-fluid">
+  <div class="row">
+    <% @favorites.each do |favorite| %>
+      <div class="col-md-4 mb-4">
+        <div class="card mb-4 shadow">
+          <%= render favorite %>
+          <p>
+            <%= link_to "Show this favorite", favorite %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <%= will_paginate @favorites %>
