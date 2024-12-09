@@ -1,4 +1,5 @@
 class LakesController < ApplicationController
+  before_action :authenticate_user!,  only: %i[ create edit update destroy ]
   before_action :set_lake, only: %i[ show edit update destroy ]
 
   # GET /lakes or /lakes.json
