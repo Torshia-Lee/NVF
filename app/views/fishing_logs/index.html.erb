@@ -4,14 +4,25 @@
 
 <h1>Fishing logs</h1>
 
-<div id="fishing_logs">
-  <% @fishing_logs.each do |fishing_log| %>
-    <%= render fishing_log %>
-    <p>
-      <%= link_to "Show this fishing log", fishing_log %>
-    </p>
-  <% end %>
+<div class="container-fluid">
+  <div class="row">
+    <% @fishing_logs.each do |fishing_log| %>
+      <div class="col-md-4 mb-4">
+        <div class="card mb-4 shadow">
+          <%= render fishing_log %>
+          <p>
+            <%= link_to "Show this fishing log", fishing_log %>
+          </p>
+        </div>
+      </div>
+    <% end %>  
+  </div>
 </div>
+
+
+
+
+
 
 <%= will_paginate @fishing_logs %>
 
