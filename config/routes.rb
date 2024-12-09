@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :favorites
   resources :fishing_logs
   devise_for :users
+  resources :users
+  get 'users/profile', to: 'users#show', as: 'user_profile'
+  get 'users/profile/edit', to: 'users#edit', as: 'edit_user_profile'
 
   root "lakes#index"
 
