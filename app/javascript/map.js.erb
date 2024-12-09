@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Initializes map if api is already loaded 
 document.addEventListener("turbo:load", () => {
     if (window.google || google.maps) {
+      geocoding();
       defaultMap();
       }
 });
