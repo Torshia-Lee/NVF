@@ -13,8 +13,8 @@
 
 
   <div>
-    <%= form.label :lake_id, "Lake Id:", style: "display: block" %>
-    <%= form.text_field :lake_id %>
+    <%= form.label :lake_id, "Select a Lake:", style: "display: block" %>
+    <%= form.collection_select :lake_id, Lake.all, :id, :name, prompt: "Lake Name" %>
   </div>
 
   <div>
