@@ -60,6 +60,15 @@ class LakesController < ApplicationController
     end
   end
 
+  def check_existence
+    @lake = Lake.find_by(name: params[:name])
+    if @lake
+      render json: { exists: true, id: @lake.id }
+    else
+      render json: { exists: false }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lake

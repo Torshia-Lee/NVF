@@ -12,8 +12,8 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, "Name of the Lake", for: "lake-name-field", style: "display: block" %>
+    <%= form.text_field :name, id: "lake-name-field" %>
   </div>
 
   <div>

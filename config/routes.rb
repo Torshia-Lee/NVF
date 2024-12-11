@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :lakes do
     resources :comments
+    get :check_existence, on: :collection
   end 
 
   
