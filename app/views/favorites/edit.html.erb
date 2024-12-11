@@ -1,12 +1,11 @@
 <% content_for :title, "Editing favorite" %>
 
-<h1>Editing favorite</h1>
+<h1 class="text-center">Editing favorite</h1>
 
 <%= render "form", favorite: @favorite %>
 
-<br>
 
-<div>
-  <%= link_to "Show this favorite", @favorite %> |
-  <%= link_to "Back to favorites", favorites_path %>
-</div>
+
+<%= link_to "Back to favorites", favorites_path, class: "btn btn-secondary" %>
+
+

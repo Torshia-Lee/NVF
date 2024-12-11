@@ -1,13 +1,11 @@
-<div id="<%= dom_id favorite %>">
-
-  <p>
-  <strong>Lake Name:</strong>
-  <%= favorite.lake.name %>
-  </p>
-
-  <p>
-    <strong>Notes:</strong>
-    <%= favorite.notes %>
-  </p>
-
+<div id="<%= dom_id favorite %>" class="card shadow-sm mb-3">
+  <div class="card-body">
+    <h5 class="text-center">
+      <%= favorite.lake.name %>
+    </h5>
+    <p class="card-text">
+      <strong>Notes:</strong> <%= favorite.notes %>
+    </p>
+  </div>
 </div>
+

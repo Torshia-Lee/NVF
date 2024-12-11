@@ -1,28 +1,31 @@
-<%= form_with(model: favorite) do |form| %>
-  <% if favorite.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(favorite.errors.count, "error") %> prohibited this favorite from being saved:</h2>
+<div class="container mt-4">
+  <%= form_with(model: favorite, class: "needs-validation") do |form| %>
+    <% if favorite.errors.any? %>
+      <div class="alert alert-danger">
+        <h4 class="alert-heading">Errors:</h4>
+        <ul>
+          <% favorite.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% favorite.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="mb-3">
+      <%= form.label :lake_id, "Select a Lake:", class: "form-label" %>
+      <%= form.collection_select :lake_id, Lake.all, :id, :name, { prompt: "Lake Name" }, { class: "form-select" } %>
     </div>
+
+    <div class="mb-3">
+      <%= form.label :notes, class: "form-label" %>
+      <%= form.text_area :notes, class: "form-control", rows: 5 %>
+    </div>
+
+    <div class="text-center">
+      <%= form.submit "Save", class: "btn btn-primary w-50" %>
+    </div>
+
+    <hr>
   <% end %>
+</div>
 
-
-  <div>
-    <%= form.label :lake_id, "Select a Lake:", style: "display: block" %>
-    <%= form.collection_select :lake_id, Lake.all, :id, :name, prompt: "Lake Name" %>
-  </div>
-
-  <div>
-    <%= form.label :notes, style: "display: block" %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>

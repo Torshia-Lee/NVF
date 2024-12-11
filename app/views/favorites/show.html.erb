@@ -2,9 +2,18 @@
 
 <%= render @favorite %>
 
-<div>
-  <%= link_to "Edit this favorite", edit_favorite_path(@favorite) %> |
-  <%= link_to "Back to favorites", favorites_path %>
-
-  <%= button_to "Destroy this favorite", @favorite, method: :delete %>
+<div class="text-center">
+  <%= link_to "Edit this fishing log", edit_favorite_path(@favorite), class: "btn btn-warning" %>
 </div>
+
+<hr>
+
+<div class="d-flex justify-content-between align-items-center">
+  <div>
+    <%= link_to "Back to favorites", favorites_path, class: "btn btn-secondary" %>
+  </div>
+  <div>
+    <%= button_to "Destroy this favorite", @favorite, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
+</div>
+

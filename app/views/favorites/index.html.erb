@@ -2,23 +2,35 @@
 
 <% content_for :title, "Favorites" %>
 
-<h1>Favorites</h1>
+<h1 class="text-center mb-4">Favorites</h1>
+
+<div class="custom-bg"
+  <p class="text-center p-3 ">(Save your favorite lakes. Click (New Favorite) button to save a new lake.)</p>
+</div>
 
 <div class="container-fluid">
   <div class="row">
     <% @favorites.each do |favorite| %>
       <div class="col-md-4 mb-4">
-        <div class="card mb-4 shadow">
-          <%= render favorite %>
-          <p>
-            <%= link_to "Show this favorite", favorite %>
-          </p>
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <%= render favorite %>
+          </div>
+          <div class="card-footer text-center">
+            <%= link_to "Show this favorite", favorite, class: "btn btn-primary btn-sm" %>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
 
-<%= will_paginate @favorites %>
+<div class="d-flex justify-content-center mt-4">
+  <%= will_paginate @favorites %>
+</div>
 
-<%= link_to "New favorite", new_favorite_path %>
+<hr> 
+<div class="text-center mt-4">
+  <%= link_to "New favorite", new_favorite_path, class: "btn btn-success btn-lg" %>
+</div>
+
