@@ -1,12 +1,12 @@
 <% content_for :title, "Editing lake" %>
 
-<h1>Editing lake</h1>
+<h1 class="mb-4">Editing Lake</h1>
 
-<%= render "form", lake: @lake %>
+<%= render "form", lake: @lake, class: "mb-4" %>
 
-<br>
+<hr>
 
 <div>
-  <%= link_to "Show this lake", @lake %> |
-  <%= link_to "Back to lakes", lakes_path %>
+  <%= link_to "Back to lakes", lakes_path, class: "btn btn-secondary" %>
 </div>
+

@@ -1,18 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @lake %>
+<div class="text-center">
+  <%= link_to "Edit this Lake", edit_lake_path(@lake), class: "btn btn-warning" %>
+</div>
+<hr>
 
-<div>
-  <%= link_to "Edit this lake", edit_lake_path(@lake) %> |
-  <%= link_to "Back to lakes", lakes_path %>
-
-  <%= button_to "Destroy this lake", @lake, method: :delete %>
+<div class="d-flex justify-content-between mb-3">
+  <div>
+    <%= link_to "Back to lakes", lakes_path, class: "btn btn-secondary me-2" %>
+  </div>
+  <div>
+    <%= button_to "Destroy this lake", @lake, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
 </div>
 
-<div>
-  <h2>Comments</h2>
-  <%= render @lake.comments %>
-
-  <h4>Add a comment:</h4>
-  <%= render "comments/form", lake: @lake %>
-</div>

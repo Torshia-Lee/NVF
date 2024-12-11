@@ -1,8 +1,7 @@
-<%= form_with model: [lake, lake.comments.build ] do |form| %>
+<%= form_with model: [lake, lake.comments.build], class: "needs-validation", novalidate: true do |form| %>
   <% if form.object.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
+    <div class="alert alert-danger" role="alert">
+      <h4><%= pluralize(form.object.errors.count, "error") %> prohibited this comment from being saved:</h4>
       <ul>
         <% form.object.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,15 +10,13 @@
     </div>
   <% end %>
 
-
-  <div>
-    <%= form.label :body, "Your Comment", style: "display: block" %>
-    <%= form.text_area :body %>
+  <div class="mb-3">
+    <%= form.label :body, "Your Comment", class: "form-label" %>
+    <%= form.text_area :body, class: "form-control" %>
   </div>
 
- 
-
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit "Submit Comment", class: "btn btn-primary" %>
   </div>
 <% end %>
+
