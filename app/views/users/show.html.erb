@@ -1,10 +1,50 @@
-<h1>Your Profile</h1>
-<p><strong>First Name:</strong> <%= @user.first_name %></p>
-<p><strong>Last Name:</strong> <%= @user.last_name %></p>
-<p><strong>Username:</strong> <%= @user.username %></p>
-<p><strong>Email:</strong> <%= @user.email %></p>
-<p><strong>County:</strong> <%= @user.county %></p>
-<p><strong>Bio:</strong> <%= @user.bio %></p>
+<h1 class="text-center mb-4">Your Profile</h1>
 
-<%= button_to "Edit Account", edit_user_profile_path, method: :get %>
-<%= button_to "Edit Log In", edit_user_registration_path, method: :get %>
+<div class="container">
+  <div class="card mb-3 shadow-sm p-3">
+    <div class="row">
+      <div class="col-md-4"><strong>First Name:</strong></div>
+      <div class="col-md-8"><%= @user.first_name %></div>
+    </div>
+  </div>
+
+  <div class="card mb-3 shadow-sm p-3">
+    <div class="row">
+      <div class="col-md-4"><strong>Last Name:</strong></div>
+      <div class="col-md-8"><%= @user.last_name %></div>
+    </div>
+  </div>
+
+  <div class="card mb-3 shadow-sm p-3">
+    <div class="row">
+      <div class="col-md-4"><strong>Username:</strong></div>
+      <div class="col-md-8"><%= @user.username %></div>
+    </div>
+  </div>
+
+  <div class="card mb-3 shadow-sm p-3">
+    <div class="row">
+      <div class="col-md-4"><strong>Email:</strong></div>
+      <div class="col-md-8"><%= @user.email %></div>
+    </div>
+  </div>
+
+  <div class="card mb-3 shadow-sm p-3">
+    <div class="row">
+      <div class="col-md-4"><strong>County:</strong></div>
+      <div class="col-md-8"><%= @user.county %></div>
+    </div>
+  </div>
+
+  <div class="card mb-3 shadow-sm p-3">
+    <div class="row">
+      <div class="col-md-4"><strong>Bio:</strong></div>
+      <div class="col-md-8"><%= @user.bio %></div>
+    </div>
+  </div>
+
+  <div class="text-center ">
+    <%= button_to "Edit Account", edit_user_profile_path, method: :get, class: 'btn btn-primary w-100 py-2' %>
+  </div>
+</div>
+

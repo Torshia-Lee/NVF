@@ -8,19 +8,26 @@
 
 <% content_for :title, "Lakes" %>
 
-<div class="jumbotron">
-  <div class="container">
+<div class="jumbotron border-bottom">
+  <div class="text-center">
     <div class="display-1">
       <h1>Fishing Spot Finder</h1>
     </div>
   </div>
 </div>
 
+<div class="custom-bg"
+  <p class="text-center p-3 ">(Search for lakes nearby by using the search bar. The map will be populated with markers on nearby lakes after pressing search. Click on the marker to go to the lake page or create one if it does not have one.)</p>
+</div>
+
 <div id="lake-nearby">
       <input id="user-input" type="text" placeholder="(City, State)" />
       <input id="submit" type="button" value="Search for lakes nearby" />
-    </div>
+</div>
+
 <div id="map"></div>
+
+
 
 <h1 id="lakes-header">Lakes</h1>
 
@@ -40,8 +47,6 @@
 </div>
 
 
-
-<%= button_to "Create New Lake Page", new_lake_path, method: :get, class: "btn btn-secondary btn-lg" %>
 
 
 
