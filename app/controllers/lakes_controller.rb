@@ -5,7 +5,6 @@ class LakesController < ApplicationController
   # GET /lakes or /lakes.json
   def index
     @lakes = Lake.all.paginate(page: params[:page], per_page: 6)
-  
   end
 
   # GET /lakes/1 or /lakes/1.json
