@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [ :index, :show ]
   before_action :set_comment, only: %i[ show edit update destroy ]
 
   # GET /comments or /comments.json
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
     @lake = Lake.find(params[:lake_id])
     @comment = @lake.comments.create(comment_params)
     @comment.user = current_user
-    
+
     if @comment.save
       redirect_to lake_path(@lake), notice: "Comment was successfully created."
     else
