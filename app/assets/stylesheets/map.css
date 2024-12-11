@@ -19,3 +19,7 @@ html, body {
 #lakes-header {
     text-align: center;
 }
+
+.custom-bg {
+    background-color: yellow;
+}

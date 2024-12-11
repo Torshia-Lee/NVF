@@ -21,16 +21,19 @@
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-3 col-lg-2 d-md-block sidebar" style="background-color: Aqua">
+          <div class="d-flex align-items-center pb-3 mb-3 border-bottom border-dark"> 
+            <span class="fs-5 fw-bold">Fishing Spot Finder</span>
+          </div>
           <div class="position-sticky">
             <ul class="nav flex-column">
-              <li class="nav-item">
-                <p class="nav-link active"><%= link_to "Home", root_path, method: :get%></p>
+              <li class="mb-1">
+                <%= button_to "Home", root_path, method: :get, class: "btn btn-toggle d-inline-flex align-items-center fw-semibold pb-5" %>
               </li>
-              <li class="nav-item">
-                <p class="nav-link active"><%= link_to "Fishing Logs", fishing_logs_path, method: :get %></p>
+              <li class="mb-1">
+                <%= button_to "Fishing Logs", fishing_logs_path, method: :get, class: "btn btn-toggle d-inline-flex align-items-center fw-semibold pb-5" %>
               </li>
-              <li class="nav-item">
-                <p class="nav-link active"><%= link_to "Favorite Spots", favorites_path, method: :get %></p>
+              <li class="mb-1">
+                <%= link_to "Favorite Spots", favorites_path, method: :get, class: "btn btn-toggle d-inline-flex align-items-center fw-semibold pb-5" %>
               </li>
             </ul>
           </div>
@@ -38,17 +41,17 @@
             <% if user_signed_in? %>
               <ul class="nav flex-column">
                 <li class="nav-item">
-                  <p class="nav-link active"><%= link_to "My Account", user_profile_path, method: :get %></p>
+                  <%= button_to "My Account", user_profile_path, method: :get, class: "btn btn-toggle d-inline-flex align-items-center fw-semibold pb-5" %>
                 </li>
               </ul>
               <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger w-100" %>
             <% else %>
               <ul class="nav flex-column">
                 <li class="nav-item">
-                  <p class="nav-link active"><%= link_to "Sign up", new_user_registration_path, method: :get %></p>
+                  <%= button_to "Sign up", new_user_registration_path, method: :get, class: "btn btn-toggle d-inline-flex align-items-center fw-semibold pb-5" %>
                 </li>
               </ul>
-              <%= button_to "Sign In", new_user_session_path, class: "btn btn-primary w-100" %>
+              <%= button_to "Login", new_user_session_path, class: "btn btn-primary w-100" %>
             <% end %>
           </div>
         </nav>
