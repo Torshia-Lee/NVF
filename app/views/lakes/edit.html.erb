@@ -1,3 +1,7 @@
+<script>
+  document.getElementById('edit-back-to-lakes').addEventListener("click", () => { window.location.href = '/'});
+</script>
+
 <% content_for :title, "Editing lake" %>
 
 <h1 class="mb-4">Editing Lake</h1>
@@ -7,6 +11,6 @@
 <hr>
 
 <div>
-  <%= link_to "Back to lakes", lakes_path, class: "btn btn-secondary" %>
+  <%= link_to "Back to lakes", lakes_path, class: "btn btn-secondary", id: "edit-back-to-lakes" %>
 </div>
 
