@@ -3,17 +3,17 @@ Rails.application.routes.draw do
   resources :fishing_logs
   devise_for :users
   resources :users
-  get 'users/profile', to: 'users#show', as: 'user_profile'
-  get 'users/profile/edit', to: 'users#edit', as: 'edit_user_profile'
+  get "users/profile", to: "users#show", as: "user_profile"
+  get "users/profile/edit", to: "users#edit", as: "edit_user_profile"
 
   root "lakes#index"
 
   resources :lakes do
     resources :comments
     get :check_existence, on: :collection
-  end 
+  end
 
-  
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
