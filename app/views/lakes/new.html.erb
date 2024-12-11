@@ -1,11 +1,17 @@
+<% content_for :javascript do %>
+  <script type="module">
+    import "autopopulate";
+  </script>
+<% end %>
+
 <% content_for :title, "New lake" %>
 
-<h1>New lake</h1>
+<h1>This lake page has not been created yet. Create a page for this lake. </h1>
 
 <%= render "form", lake: @lake %>
 
 <br>
 
 <div>
-  <%= link_to "Back to lakes", lakes_path %>
+  <%= link_to "Back to lakes", root_path, id: "back-to-lakes-link" %>
 </div>
