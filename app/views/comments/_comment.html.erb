@@ -1,15 +1,18 @@
-<div id="<%= dom_id comment %>">
-  <p>
-    <strong>User:</strong>
-    <%= comment.user.first_name %>
-  </p>
+<div id="<%= dom_id(comment) %>" class="card mb-3">
+  <div class="card-body">
+    <p>
+      <strong>User:</strong>
+      <%= comment.user.first_name %>
+    </p>
 
-  <p>
-    <strong>Body:</strong>
-    <%= comment.body %>
-  </p>
+    <p>
+      <strong>Body:</strong>
+      <%= comment.body %>
+    </p>
 
-  <p>
-    <%= button_to "Destroy Comment", [comment.lake, comment], method: :delete, data: { confirm: "Are you sure?" } %>
-  </p>
+    <p>
+      <%= button_to "Destroy Comment", [comment.lake, comment], method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+    </p>
+  </div>
 </div>
+
