@@ -1,19 +1,27 @@
 #map {
-    height: 70%;
+    height: 60%;
     width: 100%;
     margin-top: 20px;
 }
   
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
-}
-
-.sidebar {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
+}
+
+
+.sidebar {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
 }
 
 

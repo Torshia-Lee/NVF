@@ -2,7 +2,9 @@
 
 <% content_for :title, "Fishing logs" %>
 
-<h1 class="text-center">Fishing logs</h1>
+<div style="background-color: black;">
+  <h1 class="text-center">Fishing logs</h1>
+</div>
 
 <div class="custom-bg"
   <p class="text-center p-3 ">(Keep track of your catches by selecting the lake, date, species, and lures! Simply press the (New fising log) button to start a new log.)</p>
@@ -24,8 +26,9 @@
 </div>
 
 
-<%= will_paginate @fishing_logs %>
+<%= will_paginate @fishing_logs, class: 'pagination pagination-sm' %>
+
 <hr>
-<div class="text-center">
+<div class="text-center p-5">
   <%= button_to "New fishing log", new_fishing_log_path, method: :get, class: " btn btn-primary" %>
 </div>
