@@ -1,8 +1,7 @@
-<%= form_with(model: lake) do |form| %>
+<%= form_with(model: lake, class: "needs-validation", novalidate: true) do |form| %>
   <% if lake.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(lake.errors.count, "error") %> prohibited this lake from being saved:</h2>
-
+    <div class="alert alert-danger" role="alert">
+      <h4><%= pluralize(lake.errors.count, "error") %> prohibited this lake from being saved:</h4>
       <ul>
         <% lake.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,17 +10,18 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, "Name of the Lake", for: "lake-name-field", style: "display: block" %>
-    <%= form.text_field :name, id: "lake-name-field" %>
+  <div class="mb-3">
+    <%= form.label :name, "Name of the Lake", class: "form-label" %>
+    <%= form.text_field :name, id: "lake-name-field", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="mb-3">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="text-center">
+    <%= form.submit "Save Lake", class: "btn btn-primary" %>
   </div>
 <% end %>
+
