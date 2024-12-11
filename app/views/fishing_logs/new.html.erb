@@ -1,16 +1,13 @@
 <% content_for :title, "New fishing log" %>
 
-<h1>New fishing log</h1>
+<h1 class ="text-center">New fishing log</h1>
 
-<div>
-  <h2>Lakes</h2>
-  <%= render @lakes %>
-</div>
 
 <%= render "form", fishing_log: @fishing_log %>
 
 <br>
 
 <div>
-  <%= link_to "Back to fishing logs", fishing_logs_path %>
+  <%= link_to "Back to fishing logs", fishing_logs_path, class: "btn btn-secondary" %>
 </div>
+

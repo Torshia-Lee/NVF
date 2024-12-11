@@ -1,10 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @fishing_log %>
-
-<div>
-  <%= link_to "Edit this fishing log", edit_fishing_log_path(@fishing_log) %> |
-  <%= link_to "Back to fishing logs", fishing_logs_path %>
-
-  <%= button_to "Destroy this fishing log", @fishing_log, method: :delete %>
+<div class="text-center">
+  <%= link_to "Edit this fishing log", edit_fishing_log_path(@fishing_log), class: "btn btn-warning" %>
 </div>
+
+<hr>
+
+<div class="d-flex justify-content-between">
+  <div>
+    <%= button_to "Back to fishing logs", fishing_logs_path, method: :get, class: "btn btn-secondary" %>
+  </div>
+
+  <div>
+    <%= button_to "Destroy this fishing log", @fishing_log, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
+</div>
+

@@ -1,9 +1,8 @@
-<div id="<%= dom_id fishing_log %>">
+<div id="<%= dom_id fishing_log %>" class="border p-4 mb-4 bg-light rounded">
 
-  <p>
-  <strong>Lake Name:</strong>
-  <%= fishing_log.lake.name %>
-  </p>
+  <h1 class="text-center">
+    <%= fishing_log.lake.name %>
+  </h1>
 
   <p>
     <strong>Date:</strong>
@@ -23,11 +22,6 @@
   <p>
     <strong>Lures:</strong>
     <%= fishing_log.lures %>
-  </p>
-
-  <p>
-    <strong>Photo:</strong>
-    <%= fishing_log.photo %>
-  </p>
+  </p>  
 
 </div>

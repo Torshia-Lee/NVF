@@ -2,16 +2,16 @@
 
 <% content_for :title, "Fishing logs" %>
 
-<h1>Fishing logs</h1>
+<h1 class="text-center">Fishing logs</h1>
 
 <div class="container-fluid">
   <div class="row">
     <% @fishing_logs.each do |fishing_log| %>
       <div class="col-md-4 mb-4">
-        <div class="card mb-4 shadow">
+        <div class="card mb-4 shadow p-3">
           <%= render fishing_log %>
           <p>
-            <%= link_to "Show this fishing log", fishing_log %>
+            <%= button_to "Show this fishing log", fishing_log, method: :get, class: "text-center" %>
           </p>
         </div>
       </div>
@@ -20,10 +20,8 @@
 </div>
 
 
-
-
-
-
 <%= will_paginate @fishing_logs %>
 
-<%= link_to "New fishing log", new_fishing_log_path %>
+<div class="text-center">
+  <%= button_to "New fishing log", new_fishing_log_path, method: :get, class: " btn btn-primary" %>
+</div>

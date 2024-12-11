@@ -1,8 +1,7 @@
-<%= form_with(model: fishing_log) do |form| %>
+<%= form_with(model: fishing_log, class: "p-4 border rounded shadow-sm") do |form| %>
   <% if fishing_log.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(fishing_log.errors.count, "error") %> prohibited this fishing_log from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h4><%= pluralize(fishing_log.errors.count, "error") %> prohibited this fishing_log from being saved:</h4>
       <ul>
         <% fishing_log.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,32 +10,32 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :lake_id, "Select a Lake:", style: "display: block" %>
-    <%= form.collection_select :lake_id, Lake.all, :id, :name, prompt: "Lake Name" %>
+  <div class="mb-3">
+    <%= form.label :lake_id, "Select a Lake:", class: "form-label" %>
+    <%= form.collection_select :lake_id, Lake.all, :id, :name, prompt: "Lake Name", class: "form-select" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :date, class: "form-label" %>
+    <%= form.date_field :date, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :species, class: "form-label" %>
+    <%= form.text_field :species, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :notes, class: "form-label" %>
+    <%= form.text_area :notes, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :lures, class: "form-label" %>
+    <%= form.text_field :lures, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
-
-  <div>
-    <%= form.label :species, style: "display: block" %>
-    <%= form.text_field :species %>
-  </div>
-
-  <div>
-    <%= form.label :notes, style: "display: block" %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div>
-    <%= form.label :lures, style: "display: block" %>
-    <%= form.text_field :lures %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Save", class: "btn btn-primary w-100" %>
   </div>
 <% end %>
