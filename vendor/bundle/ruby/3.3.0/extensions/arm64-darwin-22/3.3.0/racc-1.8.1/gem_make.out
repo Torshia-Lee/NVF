@@ -1,0 +1,18 @@
+current directory: /Users/torshialee/Documents/fishing_spot_finder/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/torshialee/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/torshialee/Documents/fishing_spot_finder/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241215-40687-ndvrzf sitelibdir\=./.gem.20241215-40687-ndvrzf clean
+
+current directory: /Users/torshialee/Documents/fishing_spot_finder/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241215-40687-ndvrzf sitelibdir\=./.gem.20241215-40687-ndvrzf
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/torshialee/Documents/fishing_spot_finder/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241215-40687-ndvrzf sitelibdir\=./.gem.20241215-40687-ndvrzf install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20241215-40687-ndvrzf/racc
+
+current directory: /Users/torshialee/Documents/fishing_spot_finder/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241215-40687-ndvrzf sitelibdir\=./.gem.20241215-40687-ndvrzf clean
