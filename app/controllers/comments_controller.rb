@@ -48,12 +48,21 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
-    @comment.destroy!
     @lake = Lake.find(params[:lake_id])
+    @comment = current_user.comments.find_by(id: params[:id])
+    
 
-    respond_to do |format|
-      format.html { redirect_to lake_path(@lake), status: :see_other, notice: "Comment was successfully destroyed." }
-      format.json { head :no_content }
+    if @comment
+      @comment.destroy!
+      respond_to do |format|
+        format.html { redirect_to lake_path(@lake), status: :see_other, notice: "Comment was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to lake_path(@lake), notice: "You are not authorized to delete this comment." }
+        format.json { head :no_content }
+      end
     end
   end
 
