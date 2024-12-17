@@ -1,3 +1,5 @@
+var key = "<%= Rails.application.credentials.dig(:google_map_api) %>"
+
 // Adds the api key
 document.addEventListener("DOMContentLoaded", function() {
   
@@ -8,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add other bootstrap parameters as needed, using camel case.
   });
   
-
   geocoding();
   defaultMap();
 });
