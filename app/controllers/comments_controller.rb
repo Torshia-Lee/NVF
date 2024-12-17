@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
   def destroy
     @lake = Lake.find(params[:lake_id])
     @comment = current_user.comments.find_by(id: params[:id])
-    
+
 
     if @comment
       @comment.destroy!

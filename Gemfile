@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
-#Ruby
-ruby '3.3.5'
+# Ruby
+ruby "3.3.5"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
@@ -71,5 +71,5 @@ gem "devise", "~> 4.9"
 gem "will_paginate", "~> 4.0"
 
 
-#chartkick
+# chartkick
 gem "chartkick"
