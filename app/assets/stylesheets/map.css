@@ -9,6 +9,7 @@ html, body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    font-size: 1.2vw;
 }
 
 main {
@@ -31,4 +32,8 @@ main {
 
 .custom-bg {
     background-color: yellow;
+}
+
+footer {
+    position: relative;
 }
